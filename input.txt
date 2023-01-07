@@ -1,3 +1,0 @@
-files/add_constant.py plagiat1/add_constant.py
-files/auto.py plagiat2/auto.py
-files/awac.py files/awac.py
