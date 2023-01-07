@@ -68,8 +68,11 @@ args = parser.parse_args()
 scores = []
 with open(args.input, 'r', encoding='utf8') as inp:
     for line in inp:
-        orig, candidate = map(lambda x: Model.preprocessing(read_code(x)), line.split())
-        scores.append(anti_plag.predict(orig, candidate))
+        try:
+            orig, candidate = map(lambda x: Model.preprocessing(read_code(x)), line.split())
+            scores.append(anti_plag.predict(orig, candidate))
+        except SyntaxError:
+            scores.append(0)
 
 with open(args.output, 'w') as output:
     for score in scores:
