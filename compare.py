@@ -1,6 +1,46 @@
 import argparse
 import ast
-from constants import *
+
+
+alphabet = [ast.Import,
+            ast.alias,
+            ast.ImportFrom,
+            ast.ClassDef,
+            ast.Name,
+            ast.Load,
+            ast.Expr,
+            ast.Constant,
+            ast.FunctionDef,
+            ast.arguments,
+            ast.arg,
+            ast.Subscript,
+            ast.Index,
+            ast.Assign,
+            ast.Attribute,
+            ast.Store,
+            ast.If,
+            ast.Call,
+            ast.Return,
+            ast.ExtSlice,
+            ast.Slice,
+            ast.BinOp,
+            ast.Add,
+            ast.keyword,
+            ast.List,
+            ast.Tuple,
+            ast.Sub,
+            ast.Compare,
+            ast.Eq,
+            ast.For,
+            ast.Mult,
+            ast.Div,
+            ast.Raise,
+            ast.UnaryOp,
+            ast.USub,
+            ast.Dict,
+            ast.comprehension,
+            ast.Assert]
+alphabet_mapping = {word: index for index, word in enumerate(alphabet)}
 
 
 def read_code(name):
